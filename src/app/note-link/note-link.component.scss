@@ -1,0 +1,15 @@
+.note-link {
+  text-decoration: none;
+  color: lightgrey;
+  a {
+    color: darkslategrey;
+    padding-right: 2rem;
+  }
+  &:hover {
+    text-decoration: underline black 2px;
+  }
+  h1 {
+    color: darkslategrey;
+  }
+}
+
