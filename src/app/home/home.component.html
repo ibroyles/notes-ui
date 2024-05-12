@@ -1,11 +1,12 @@
 <main class="main">
-  <div class="content d-flex flex-column align-items-center p-3">
-    <h1 class="pb-3">Notes App</h1>
-    <!--    NoteLink Component rendered ngFor-->
-    <div *ngFor="let note of notesData">
-      <app-note-link [note]="note"></app-note-link>
-    </div>
-    <button>Add Note</button>
-  </div>
+      <div class="content d-flex flex-column align-items-center p-3">
+        <h1 class="pb-3">Notes App</h1>
+        <!--    NoteLink Component rendered ngFor-->
+        <div *ngFor="let note of notesData">
+          <app-note-link [note]="note"></app-note-link>
+        </div>
+        <a routerLink="/create" class="btn btn-secondary">Add Note</a>
+      </div>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+

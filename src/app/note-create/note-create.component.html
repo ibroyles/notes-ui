@@ -1,0 +1,13 @@
+<div class="d-flex flex-column align-items-center m-3" >
+  <form class="w-50">
+    <div class="mb-3 w-100">
+      <label for="title" class="form-label">Title</label>
+      <input [formControl]="noteTitle" type="text" class="form-control" id="title" placeholder="Untitled Note">
+    </div>
+    <div class="mb-3 w-100">
+      <textarea [formControl]="noteBody" class="form-control" id="body" rows="10"></textarea>
+    </div>
+    <button class="btn btn-small btn-light me-2" (click)="saveNote()" routerLink="/home">Save</button>
+    <button class="btn btn-small btn-primary" routerLink="/home">Cancel</button>
+  </form>
+</div>

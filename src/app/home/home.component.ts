@@ -1,15 +1,20 @@
-import { Component } from '@angular/core';
-import {NgForOf} from "@angular/common";
+import {Component, Input} from '@angular/core';
+import {NgForOf, NgIf} from "@angular/common";
 import {NoteLinkComponent} from "../note-link/note-link.component";
 import {Note, NoteService} from "../note.service";
+import {RouterLink} from "@angular/router";
+import {AuthComponent} from "../auth/auth.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-    imports: [
-        NgForOf,
-        NoteLinkComponent
-    ],
+  imports: [
+    NgForOf,
+    NgIf,
+    NoteLinkComponent,
+    RouterLink,
+    AuthComponent
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -25,10 +30,6 @@ export class HomeComponent {
   }
 
   showNotes() {
-    this.notesService.getNotes().subscribe(notes => {
-      for (let note of notes) {
-        this.notesData.push(note);
-      }
-    })
+    this.notesData = this.notesService.getNotes()
   }
 }
